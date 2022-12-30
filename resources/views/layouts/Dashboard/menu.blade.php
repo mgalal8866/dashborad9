@@ -35,7 +35,7 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="nav-item"><a class="d-flex align-items-center" href="/"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">{{__('tran.dashboard')}}</span></a>
+                <li class="nav-item"><a class="d-flex align-items-center" href="{{route('dashboard')}}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">{{__('tran.dashboard')}}</span></a>
                 </li>
                 <li class=" navigation-header"><span >{{__('tran.setting')}}</span><i data-feather="more-horizontal"></i>
                 </li>
@@ -49,7 +49,7 @@
                     <ul class="menu-content">
                         <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Roles">{{__('tran.roles')}}</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Permission">{{__('tran.permission')}}</span></a>
+                        <li><a class="d-flex align-items-center" href="{{route('roles')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Permission">{{__('tran.permission')}}</span></a>
                         </li>
                     </ul>
                 </li>

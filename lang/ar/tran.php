@@ -12,13 +12,18 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
-    'logout' => 'خروج',
+    'name'          =>'الاسم',
+    'lastseen'      =>'اخر ظهور',
+    'action'        =>'الاجراء',
+    'ip'            =>'اى بى',
+    'status'        =>'الحالة',
+    'brand'         =>'العلامة التجارية',
+    'logout'        => 'خروج',
     'payment_method'=>'وسائل الدفع',
-    'login_method'=>'وسائل الدخول',
-    'setting'=>'ألاعدادات',
-    'permission'=>'الصلاحيات',
-    'roles'=>'الاذونات',
-    'users'=>'المستخدمين',
-    'dashboard'=>'الرئيسية'
+    'login_method'  =>'وسائل الدخول',
+    'setting'       =>'ألاعدادات',
+    'permission'    =>'الصلاحيات',
+    'roles'         =>'الاذونات',
+    'users'         =>'المستخدمين',
+    'dashboard'     =>'الرئيسية'
 ];

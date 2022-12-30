@@ -4,9 +4,11 @@ namespace App\Http\Controllers\auth;
 
 
 use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Models\SocialAccount;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
 class SocialLoginController extends Controller
@@ -16,9 +18,10 @@ class SocialLoginController extends Controller
     }
 
     public function providerCallback(String $provider){
-        
+
         try{
             $social_user = Socialite::driver($provider)->user();
+
             // First Find Social Account
             $account = SocialAccount::where([
                 'provider_name'=>$provider,
@@ -27,31 +30,33 @@ class SocialLoginController extends Controller
 
             // If Social Account Exist then Find User and Login
             if($account){
-                auth()->login($account->user);
-                return redirect()->route('home');
+                // auth('admin')->login($account->user);
+                Auth::guard('admin')->login($account->user);
+                return redirect()->route('dashboard');
             }
 
             // Find User
-            $user = User::where([
+            $user = Admin::where([
                 'email'=>$social_user->getEmail()
                 ])->first();
 
                 // If User not get then create new user
                 if(!$user){
-                    $user = User::create([
+                    $user = Admin::create([
                         'email'=>$social_user->getEmail(),
                         'name'=>$social_user->getName()
                     ]);
                 }
 
-            // Create Social Accounts
+            // Create Social Ac`counts
+           
             $user->socialAccounts()->create([
                 'provider_id'=>$social_user->getId(),
                 'provider_name'=>$provider
             ]);
 
             // Login
-            auth()->login($user);
+            Auth::guard('admin')->login($user);
             return redirect()->route('home');
 
         }catch(\Exception $e){

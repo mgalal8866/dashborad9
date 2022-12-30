@@ -35,9 +35,9 @@ return [
         'redirect' => env('SOCIALITE_REDIRECT', "https://localhost/public/social-auth/github/callback"),
     ],
     'google' => [
-        'client_id' => env('GOOGLE_CLIENT_ID', "1079002974610-aav9o2gv8kpas62nleq6l9f37gf0oc2f"),
-        'client_secret' => env('GOOGLE_CLIENT_SECRET', "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"),
-        'redirect' => env('SOCIALITE_REDIRECT', "http://127.0.0.1:8000/auth/socialite/callback"),
+        'client_id' => env('GOOGLE_CLIENT_ID', "860115135113-5pl0fa2ejgpvp81iau8ubdd472ar5qr7.apps.googleusercontent.com"),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET', "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"),
+        'redirect' => env('SOCIALITE_REDIRECT', "https://localhost/social-auth/google/callback"),
     ],
     'gitlab' => [
         'client_id' => env('GITLAB_CLIENT_ID'),
